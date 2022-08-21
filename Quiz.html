@@ -1,0 +1,164 @@
+<HTML>
+<HEAD>
+	<TITLE>Artificial Neural Networks</TITLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Begin
+
+// initialising variables
+var ans=new Array;
+var done=new Array;
+var yourAns=new Array;
+var explainAnswer=new Array;
+var score=0;
+
+// the correct answers
+ans[1]="d";
+ans[2]="b";
+ans[3]="c";
+ans[4]="d";
+ans[5]="c";
+ans[6]="b";
+ans[7]="d";
+ans[8]="c";
+ans[9]="b";
+ans[10]="a";
+
+explainAnswer[1]="100 billion neurons";
+explainAnswer[2]="Parallel Distributed Processing";
+explainAnswer[3]="neuron connected only to other neurons";
+explainAnswer[4]="All 3 happened in 1969";
+explainAnswer[5]="5 or 6";
+explainAnswer[6]="Either input on with the other off";
+explainAnswer[7]="More than 1 layer is required to solve XOR";
+explainAnswer[8]="Learning";
+explainAnswer[9]="It is supervised learning";
+explainAnswer[10]="McCulloch and Pitts proposed artificial neuron";
+
+function Engine(question, answer) 
+{
+	yourAns[question] = answer;
+}
+
+function Score()
+{
+	// display either "correct" msg or the correct answer
+	var answerText="How did you do?\n------------------------------------\n";
+	for(i=1;i<=10;i++)
+	{
+   		answerText=answerText+"\nQuestion :"+i+"\n";
+  		if(ans[i] != yourAns[i])
+		{
+    			answerText = answerText+"\nThe correct answer was "+ans[i]+"\n"+explainAnswer[i]+"\n";
+  		}
+  		else
+		{
+    			answerText = answerText+" \nCorrect! \n";
+    			score++;
+  		}
+	}
+
+	answerText=answerText+"\n\nYour total score is : "+score+"\n";
+
+	// comment on the users score
+	answerText=answerText+"\nComment : ";
+	if(score<=0)
+	{
+		answerText=answerText+"You need to learn some more";
+	}
+	if(score>=1 && score <= 4)
+	{
+		answerText=answerText+"More practice needed";
+	}
+	if(score>=5 && score <= 7)
+	{
+		answerText=answerText+"Not bad";
+	}
+	if(score>8)
+	{
+		answerText=answerText+"You are on fire!";
+	}
+
+	alert(answerText);
+}
+//  End -->
+</SCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR = "#FFFFCC">
+
+<H1>CM3007 Quiz</H1>
+
+<B>Test your knowledge of Neural Nets</B>
+
+<HR>
+
+<FORM>
+
+<B>1. Roughly, how many neurons are there in the human nervous system ?</B><BR>
+<INPUT TYPE=RADIO NAME="q1" value="a" ONCLICK="Engine(1, this.value)">a) 27<BR>
+<INPUT TYPE=RADIO NAME="q1" value="b" ONCLICK="Engine(1, this.value)">b) 3000<BR>
+<INPUT TYPE=RADIO NAME="q1" value="c" ONCLICK="Engine(1, this.value)">c) 1 Million<BR>
+<INPUT TYPE=RADIO NAME="q1" value="d" ONCLICK="Engine(1, this.value)">d) 100 Billion<P>
+
+<B>2. What does P.D.P. stand for?</B><BR>
+<INPUT TYPE=RADIO NAME="q2" value="a" ONCLICK="Engine(2, this.value)">a) Physical Dynamic Perceptron<BR>
+<INPUT TYPE=RADIO NAME="q2" value="b" ONCLICK="Engine(2, this.value)">b) Parallel Distributed Processing<BR>
+<INPUT TYPE=RADIO NAME="q2" value="c" ONCLICK="Engine(2, this.value)">c) Parallel Digital Propagation<BR>
+<INPUT TYPE=RADIO NAME="q2" value="d" ONCLICK="Engine(2, this.value)">d) It doesn't stand for anything<P>
+
+<B>3. What is an interneuron?</B><BR>
+<INPUT TYPE=RADIO NAME="q3" value="a" ONCLICK="Engine(3, this.value)">a) A type of Hopfield Network<BR>
+<INPUT TYPE=RADIO NAME="q3" value="b" ONCLICK="Engine(3, this.value)">b) Another name for a Perceptron<BR>
+<INPUT TYPE=RADIO NAME="q3" value="c" ONCLICK="Engine(3, this.value)">c) A neuron connected only to other neurons<BR>
+<INPUT TYPE=RADIO NAME="q3" value="d" ONCLICK="Engine(3, this.value)">d) A Brazillian footballer<P>
+
+<B>4. What happened in 1969?</B><BR>
+<INPUT TYPE=RADIO NAME="q4" value="a" ONCLICK="Engine(4, this.value)">a) Man landed on the moon<BR>
+<INPUT TYPE=RADIO NAME="q4" value="b" ONCLICK="Engine(4, this.value)">b) Minsky and Pappart published 'Perceptrons'<BR>
+<INPUT TYPE=RADIO NAME="q4" value="c" ONCLICK="Engine(4, this.value)">c) Nic Capanni was born<BR>
+<INPUT TYPE=RADIO NAME="q4" value="d" ONCLICK="Engine(4, this.value)">d) All of the above<P>
+
+<B>5. What is the maximum number of layers present in the cortex?</B><BR>
+<INPUT TYPE=RADIO NAME="q5" value="a" ONCLICK="Engine(5, this.value)">a) 1<BR>
+<INPUT TYPE=RADIO NAME="q5" value="b" ONCLICK="Engine(5, this.value)">b) 4<BR>
+<INPUT TYPE=RADIO NAME="q5" value="c" ONCLICK="Engine(5, this.value)">c) 5 or 6, depending how you count them<BR>
+<INPUT TYPE=RADIO NAME="q5" value="d" ONCLICK="Engine(5, this.value)">d) 15<P>
+
+<B>6. The XOR problem is?</B><BR>
+<INPUT TYPE=RADIO NAME="q6" value="a" ONCLICK="Engine(6, this.value)">a) X and Y or neither<BR>
+<INPUT TYPE=RADIO NAME="q6" value="b" ONCLICK="Engine(6, this.value)">b) X or Y but not both<BR>
+<INPUT TYPE=RADIO NAME="q6" value="c" ONCLICK="Engine(6, this.value)">c) X and Y<BR>
+<INPUT TYPE=RADIO NAME="q6" value="d" ONCLICK="Engine(6, this.value)">d) Y but not X<P>
+
+<B>7. Which of the following can not solve an XOR problem?</B><BR>
+<INPUT TYPE=RADIO NAME="q7" value="a" ONCLICK="Engine(7, this.value)">a) Computers<BR>
+<INPUT TYPE=RADIO NAME="q7" value="b" ONCLICK="Engine(7, this.value)">b) Neural Nets<BR>
+<INPUT TYPE=RADIO NAME="q7" value="c" ONCLICK="Engine(7, this.value)">c) Computers<BR>
+<INPUT TYPE=RADIO NAME="q7" value="d" ONCLICK="Engine(7, this.value)">d) Perceptrons<P>
+
+<B>8. Neural nets are best at?</B><BR>
+<INPUT TYPE=RADIO NAME="q8" value="a" ONCLICK="Engine(8, this.value)">a) reasoning<BR>
+<INPUT TYPE=RADIO NAME="q8" value="b" ONCLICK="Engine(8, this.value)">b) analog transformations<BR>
+<INPUT TYPE=RADIO NAME="q8" value="c" ONCLICK="Engine(8, this.value)">c) learning<BR>
+<INPUT TYPE=RADIO NAME="q8" value="d" ONCLICK="Engine(8, this.value)">d) mental images<P>
+
+<B>9. Backpropagation is unsupervised learning. </B><BR>
+<INPUT TYPE=RADIO NAME="q9" value="a" ONCLICK="Engine(9, this.value)">a) True<BR>
+<INPUT TYPE=RADIO NAME="q9" value="b" ONCLICK="Engine(9, this.value)">b) False<P>
+
+<B>10. In 1943?</B><BR>
+<INPUT TYPE=RADIO NAME="q10" value="a" ONCLICK="Engine(10, this.value)">a) McCulloch and Pitts proposed the artificial neuron<BR>
+<INPUT TYPE=RADIO NAME="q10" value="b" ONCLICK="Engine(10, this.value)">b) Rosenblatt discovered the perceptron<BR>
+<INPUT TYPE=RADIO NAME="q10" value="c" ONCLICK="Engine(10, this.value)">c) Hopfield Network was created<BR>
+<INPUT TYPE=RADIO NAME="q10" value="d" ONCLICK="Engine(10, this.value)">d) Kohonen discovered the perceptron<P>
+
+<CENTER>
+<INPUT TYPE=button ONCLICK="Score()" value="Well... How did I do?">
+</CENTER>
+</FORM>
+
+</BODY>
+</HTML>
